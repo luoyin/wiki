@@ -1,7 +1,7 @@
-created: 20221005164030827
-modified: 20221006153949045
-tags: 早期CPU
-title: MCS-4 (Intel)
+created: 20221006135931396
+modified: 20221006153919108
+tags: [[MCS-4 (Intel)]]
+title: Intel4004
 type: text/vnd.tiddlywiki
 
 <$list filter="[tag<currentTiddler>]">
@@ -9,7 +9,5 @@ type: text/vnd.tiddlywiki
 !!! <$link><<currentTiddler>></$link>
 
  {{!!text}}
- 
- ---
 
 </$list>

@@ -1,0 +1,43 @@
+created: 20221006150019044
+modified: 20221006153514595
+tags: [[MCS-4 (Intel)]]
+title: Intel4002 (RAM)
+type: text/vnd.tiddlywiki
+
+!!! 1. 存储结构
+* 主存储: 4 * 16 * 4 = 256-bit
+** 4个Registers
+** 地址位宽: 4-bit (可通过SRC指令寻址16个独立地址)
+** 数据位宽: 4-bit
+* 状态存储: 4 * 4 * 4 = 64-bit
+** 4个Registers
+** 存储个数: 4个 (可通过xx指令寻址)
+** 数据位宽: 4-bit
+* 2个mask硬编码, 结合P0引脚, 构成4个不同的可寻址芯片
+
+!!! 2. 寻址方式
+* 1. 调用DCL指令, 设置CM-RAM0 ~ CM-RAM3 (可寻址范围: 4)
+* 2. 调用SRC指令, 设置
+** Chip No.: Phase X2的总线高2-bit
+** Register No.: Phase X2的总线低2-bit
+** 主存地址: Phase X3的总线4-bit
+* 3. 调用相关指令, 对RAM进行操作
+** WRM: 写入主存储
+** RDM/SBM/ADM: 读取主存储
+** WMP: 写入output端口
+** WR0~WR3: 写入状态存储
+** RD0~RD3: 读取状态存储
+* 最大寻址规格
+** 主存储: 4 (DCL) * 4 (Chip No.) * 4 (Reg. No.) * 16 (Addr) * 4-bit = 4,096-bit
+** 状态存储: 4 (DCL) * 4 (Chip No.) * 4 (Reg. No.) * 4 * 4-bit = 1,024-bit
+** Output端口: 4 (DCL) * 4 (Chip No.) * 4-bit = 64-bit
+
+!!! 3. 引脚
+| 引脚   | 方向 | 功能 |
+| D0 ~ D3    | 双向 | 数据总线 |
+| CLK1, CLK2 | 输入 | 时钟 |
+| SYNC       | 输入 | 同步信号 |
+| RESET      | 输入 | 重置信号 |
+| P0         | 输入 | 辅助片选 |
+| CM         | 输入 | 片选 |
+| O0 ~ O3    | 输出 | 输出端口 |

@@ -1,0 +1,15 @@
+created: 20221006142326709
+modified: 20221006145454769
+tags: Intel4004
+title: Intel4004-引脚
+type: text/vnd.tiddlywiki
+
+!! 引脚
+| 引脚 | 方向 | 功能 |
+| D0 ~ D3 | 双向 | 数据总线 |
+| c1, c2  | 输入 | 时钟 |
+| SYNC    | 输出 | 同步 |
+| CM-RAM0 ~ CM-RAM3 | 输出 | RAM片选 |
+| CM-ROM  | 输出 | ROM片选 |
+| TEST    | 输入 | TEST信号 |
+| RESET   | 输入 | 重置 |
