@@ -1,5 +1,32 @@
 created: 20221007125712702
-modified: 20221007130157709
+modified: 20221007144834316
 tags: QuestaSim使用方法
 title: QuestaSim-HelloWorld
 type: text/vnd.tiddlywiki
+
+!!! 操作步骤
+# New project
+# New or add files
+# New TCL file `sim.do`
+# Run command `do sim.do`
+
+!!! `sim.do`文件内容
+
+```tcl
+vlib work
+vlog dut.sv top_tb.sv
+vsim -voptargs=+acc work.top_tb
+
+## add waves
+add wave -position insertpoint sim:/top_tb/a
+add wave -position insertpoint sim:/top_tb/b
+add wave -position insertpoint sim:/top_tb/cin
+add wave -position insertpoint sim:/top_tb/y
+add wave -position insertpoint sim:/top_tb/cout
+
+## run
+run 200ns
+```
+
+!!! 主要命令解析
+
