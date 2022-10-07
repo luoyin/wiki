@@ -7,6 +7,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:FPGA相关软件使用方法</loc>
+		<lastmod>2022-10-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:FPGA设计</loc>
 		<lastmod>2022-10-05</lastmod>
 		<changefreq>monthly</changefreq>
@@ -63,6 +69,18 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:MCS-4参考资料</loc>
 		<lastmod>2022-10-05</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:QuestaSim-HelloWorld</loc>
+		<lastmod>2022-10-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:QuestaSim使用方法</loc>
+		<lastmod>2022-10-07</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
