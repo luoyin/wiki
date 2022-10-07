@@ -1,5 +1,33 @@
 created: 20221006142523601
-modified: 20221006142542883
+modified: 20221006161639997
 tags: Intel4004
 title: Intel4004-指令
 type: text/vnd.tiddlywiki
+
+!!! 1. 内部状态存储
+
+!!! 2. 指令行为
+!!!! 2.1 单周期指令
+单周期指令A1, A2, A3, M1, M2行为一致
+
+* A1: PCL&rarr;BUS
+* A2: PCM&rarr;BUS
+* A3: PCH&rarr;BUS
+* M1: BUS&rarr;OPR
+* M2: BUS&rarr;OPA
+
+X1, X2, X3行为如下
+
+| OP  | X1 | X2 | X3 |
+| NOP | -  | -  | -  |
+| SRC | -  | RPH&rarr;BUS | RPL&rarr;BUS |
+| xxx | | | |
+| xxx | | | |
+
+!!!! 2.2 双周期指令
+| OP  | A1 | A2 | A3 | M1 | M2 | X1 | X2 | X3 |
+| FIM-1 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR | BUS&rarr;OPA | | | |
+| FIM-2 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | | | |
+| xxx | | | | | | | | |
+
+
