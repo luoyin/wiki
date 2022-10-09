@@ -56,7 +56,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:MCS-4%2520(Intel)</loc>
-		<lastmod>2022-10-06</lastmod>
+		<lastmod>2022-10-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -111,6 +111,90 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:UVM</loc>
 		<lastmod>2022-10-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Agent</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Driver</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Env</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Factory机制</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520field%2520automation机制</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Monitor</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Objection机制</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Ref%2520Model</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Scoreboard</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520Transaction</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM%2520virtual%2520interface机制</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM机制</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:UVM组成元素</loc>
+		<lastmod>2022-10-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:典型UVM验证平台</loc>
+		<lastmod>2022-10-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
