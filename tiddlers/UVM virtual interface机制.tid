@@ -1,0 +1,46 @@
+created: 20221009141958336
+modified: 20221009143521808
+tags: UVM机制
+title: UVM virtual interface机制
+type: text/vnd.tiddlywiki
+
+使用virtual interface描述端口的抽象形式, 支持使用`set`和`get`进行信号绑定
+
+定义方式
+
+```verilog
+interface T(args);
+  // signal
+	...
+endinterface
+```
+
+使用方式(实体, in module)
+
+```verilog
+T inst(args);
+/* uvm_config_db::set
+ * static function void set(uvm_component cntxt,
+ *                          string inst_name,
+ *                          string field_name,
+ *                          T value);
+ */
+uvm_config_db#(virtual T)::set(cntxt, inst_name, field_name, value);
+// example code
+uvm_config_db#(virtual my_if)::set(null, "uvm_test_top", "vif", input_vif);
+```
+
+使用方式(非实体, in class)
+
+```verilog
+virtual T inst;
+/* uvm_config::get
+ * static function bit get(uvm_component cntxt,
+ *                         string inst_name,
+ *                         string field_name,
+ *                         inout T value);
+ */
+uvm_config_db#(virtual T)::get(cntxt, inst_name, field_name, value);
+// example code
+uvm_config_db#(virtual my_if)::get(this, "", "vif", vif);
+```

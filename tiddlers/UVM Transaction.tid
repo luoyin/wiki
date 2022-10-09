@@ -1,0 +1,11 @@
+created: 20221009143623109
+modified: 20221009150110743
+tags: UVM组成元素
+title: UVM Transaction
+type: text/vnd.tiddlywiki
+
+!!! 功能
+数据包.
+
+!!! 实现方式
+派生于`uvm_sequence_item`, 主要基于CRNG进行数据包的生成.

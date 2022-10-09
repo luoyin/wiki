@@ -1,0 +1,19 @@
+created: 20221009134903461
+modified: 20221009135638690
+tags: UVM
+title: 典型UVM验证平台
+type: text/vnd.tiddlywiki
+
+验证平台组成
+
+* DUT
+* env
+** in_agent
+*** sequencer
+*** driver
+*** monitor
+** out_agent
+*** monitor
+** reference model
+** scoreboard
+

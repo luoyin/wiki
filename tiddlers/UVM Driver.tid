@@ -1,0 +1,30 @@
+created: 20221009143556879
+modified: 20221009151415719
+tags: UVM组成元素
+title: UVM Driver
+type: text/vnd.tiddlywiki
+
+!!! 功能
+将uvm_transaction类型的数据转换为DUT可接受的端口数据.
+
+!!! 使用方式
+派生自`uvm_driver`, 实现虚方法:
+
+```verilog
+class my_driver extends uvm_driver;
+  `uvm_component_utils(my_driver)
+  function new(string name = "my_driver", uvm_component parent = null);
+    super.new(name, parent);
+	  ...
+  endfunction
+	 
+  virtual function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    ...
+  endfunction
+	 
+  task main_phase(uvm_phase phase);
+	  ...
+	endtask
+endclass
+```

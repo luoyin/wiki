@@ -1,0 +1,17 @@
+created: 20221009141531056
+modified: 20221009143521807
+tags: UVM机制
+title: UVM Objection机制
+type: text/vnd.tiddlywiki
+
+用于phase同步, 在phase启动时进行raise操作, 在phase结束后进行drop操作, 当raise的对象被drop后, phase退出.
+
+常用于`drvier::main_phase`中
+
+```verilog
+task my_driver::main_phase(uvm_phase phase);
+  phase.raise_objection(this);
+	...
+	phase.drop_objection(this);
+endtask
+```

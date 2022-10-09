@@ -1,0 +1,30 @@
+created: 20221009143649134
+modified: 20221009151228094
+tags: UVM组成元素
+title: UVM Env
+type: text/vnd.tiddlywiki
+
+!!! 功能
+提供整体测试环境, 包括各种UVM组件
+
+!!! 实现方式
+* 自`uvm_env`派生
+* 包含测试环境中的各组件
+* 实现`build_phase`方法, 初始化各组件
+* 可在`top_tb`中使用`run_test`调用uvm env
+
+```verilog
+class my_env extends uvm_env;
+  function new(string name = "my_env", uvm_component parent);
+	  super.new(name, parent);
+		...
+	endfunction
+	
+	virtual function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+		...
+  endfunction
+	
+	`uvm_component_utils(my_env)
+endclass
+```

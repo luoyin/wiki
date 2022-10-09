@@ -1,15 +1,11 @@
-created: 20221005164030827
-modified: 20221009143904379
-tags: 早期CPU
-title: MCS-4 (Intel)
+created: 20221009135648627
+modified: 20221009143936225
+tags: UVM
+title: UVM机制
 type: text/vnd.tiddlywiki
 
 <$list filter="[tag<currentTiddler>]">
 
 !!! <$link><<currentTiddler>></$link>
-
- {{!!text}}
- 
- ---
 
 </$list>

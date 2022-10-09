@@ -1,0 +1,13 @@
+created: 20221009143706063
+modified: 20221009151709743
+tags: UVM组成元素
+title: UVM Monitor
+type: text/vnd.tiddlywiki
+
+!!! 功能
+将DUT接受或输出的端口数据转换为transaction数据.
+
+!!! 实现方式
+* 派生自`uvm_monitor`
+* 实现`new`, `build_phase`, `main_phase`等方法
+* 通过`main_phase`监听并捕获数据
