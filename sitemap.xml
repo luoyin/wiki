@@ -50,13 +50,13 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Intel4004-指令</loc>
-		<lastmod>2022-10-06</lastmod>
+		<lastmod>2022-10-15</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:MCS-4%2520(Intel)</loc>
-		<lastmod>2022-10-09</lastmod>
+		<lastmod>2022-10-15</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -69,6 +69,30 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:MCS-4参考资料</loc>
 		<lastmod>2022-10-05</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:MCS-4汇编编译器</loc>
+		<lastmod>2022-10-15</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:MCS-4汇编编译器%2520(基于OCaml)</loc>
+		<lastmod>2022-10-15</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:MCS-4汇编编译器--汇编语法%2520(基于OCaml)</loc>
+		<lastmod>2022-10-15</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:MCS-4汇编编译器实现%2520(基于OCaml)</loc>
+		<lastmod>2022-10-15</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -213,6 +237,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:目录</loc>
 		<lastmod>2022-10-05</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:编译器</loc>
+		<lastmod>2022-10-15</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
