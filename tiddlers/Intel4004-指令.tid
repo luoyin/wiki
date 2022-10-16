@@ -1,5 +1,5 @@
 created: 20221006142523601
-modified: 20221006161639997
+modified: 20221015153733428
 tags: Intel4004
 title: Intel4004-指令
 type: text/vnd.tiddlywiki
@@ -7,7 +7,13 @@ type: text/vnd.tiddlywiki
 !!! 1. 内部状态存储
 
 !!! 2. 指令行为
-!!!! 2.1 单周期指令
+!!!! 2.1. 基本假设
+* X1: Reg read
+* X2: Reg read, Reg write
+* X3: Reg write
+
+
+!!!! 2.2. 单周期指令
 单周期指令A1, A2, A3, M1, M2行为一致
 
 * A1: PCL&rarr;BUS
@@ -19,15 +25,29 @@ type: text/vnd.tiddlywiki
 X1, X2, X3行为如下
 
 | OP  | X1 | X2 | X3 |
-| NOP | -  | -  | -  |
-| SRC | -  | RPH&rarr;BUS | RPL&rarr;BUS |
-| xxx | | | |
-| xxx | | | |
+| NOP | - | - | - |
+| SRC | - | RPH&rarr;BUS | RPL&rarr;BUS |
+| JIN | - | R[OPA/0]&rarr;PCM | R[OPA/1]&rarr;PCL |
+| INC | R[OPA]&rarr;tmp | - | ALU&rarr;R[OPA] |
+| ADD/SUB | R[OPA]&rarr;tmp | ALU&rarr;R[0] | - |
+| LD  | R[OPA]&rarr;tmp | tmp&rarr;R[0] | - |
+| XCH | R[0]&rarr;tmp | R[OPA]&rarr;R[0] | tmp&rarr;R[OPA] |
+| BBL/LDM | - | OPA&rarr;R[0] | - |
+| IO  | - | R[0]&rarr;BUS | - |
+| IOR | - | BUS&rarr;R[0] | - |
 
-!!!! 2.2 双周期指令
+!!!! 2.3. 双周期指令
 | OP  | A1 | A2 | A3 | M1 | M2 | X1 | X2 | X3 |
+| JCN-1 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR | BUS&rarr;OPA | - | - | - |
+| JCN-2 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | - | OPR2&rarr;PCM(c) | OPA2&rarr;PCL(c) |
 | FIM-1 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR | BUS&rarr;OPA | | | |
-| FIM-2 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | | | |
-| xxx | | | | | | | | |
+| FIM-2 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | | OPR2&rarr;R[OPA/0] | OPA2&rarr;R[OPA/1] |
+| FIN-1 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR | BUS&rarr;OPA | | | |
+| FIN-2 | R[0]&rarr;BUS | R[1]&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | - | | |
+| JUN/JMS-1 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR | BUS&rarr;OPA | | | |
+| JUN/JMS-2 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | OPA&rarr;PCH | OPR2&rarr;PCM | OPA2&rarr;PCL |
+| ISZ-1 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR | BUS&rarr;OPA | R[OPA]&rarr;tmp | - | ALU&rarr;R[OPA] |
+| ISZ-2 | PCL&rarr;BUS | PCM&rarr;BUS | PCH&rarr;BUS | BUS&rarr;OPR2 | BUS&rarr;OPA2 | - | OPR2&rarr;PCM(c) | OPA2&rarr;PCL(c) |
+
 
 

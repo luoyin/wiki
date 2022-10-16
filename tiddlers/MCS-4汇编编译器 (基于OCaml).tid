@@ -1,0 +1,29 @@
+created: 20221015141630306
+modified: 20221015143631825
+tags: MCS-4汇编编译器
+title: MCS-4汇编编译器 (基于OCaml)
+type: text/vnd.tiddlywiki
+
+!! 1. 汇编语法
+* 操作数
+** 立即数: `~$`
+** Register: `~%`
+** Register Pair: `~%%`
+** Label: `~$$`
+
+!! 2. 示例代码
+!!! 2.1. 两数相加
+```
+let prog = Asm.{
+  text_asm = [
+     gblock "_main" [
+       LDM, [~$4];
+       XCH, [~%R1];
+       LDM, [~$6];
+       ADD, [~%R1];
+       HLT, []
+     ]
+  ];
+  data_asm = []
+};;
+```

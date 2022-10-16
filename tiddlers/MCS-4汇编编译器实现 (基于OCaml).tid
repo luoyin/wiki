@@ -1,0 +1,7 @@
+created: 20221015143926052
+modified: 20221015145852699
+tags: [[MCS-4汇编编译器 (基于OCaml)]]
+title: MCS-4汇编编译器实现 (基于OCaml)
+type: text/vnd.tiddlywiki
+
+!! 1. 实现原理
