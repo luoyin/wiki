@@ -1,0 +1,32 @@
+created: 20221016145106853
+draft.of: 新条目
+draft.title: MCS-4 on FPGA (设计)
+modified: 20221016151552708
+tags: [[MCS-4 on FPGA]]
+title: Draft of '新条目'
+type: text/vnd.tiddlywiki
+
+! 1. 模块设计
+!! 1.1. 原始规格
+* ROM (ROM)
+** 12-bit地址, 可寻址4096*8-bit
+* RAM
+** main memory (MRAM)
+*** 10-bit等效地址, 可寻址1024*4-bit
+*** 2-bit by DCL, 8-bit by SRC
+** status memory (SRAM)
+*** 8-bit等效地址, 可寻址256*4-bit
+*** 2-bit by DCL, 4-bit by SRC, 2-bit by opr
+* I/O
+** I/O in 4001 (IOPort)
+*** 16*4个双向端口
+** Output in 4002 (OPort)
+*** 16*4个输出端口
+
+!! 1.2. 总线仲裁
+* 外设&rarr;CPU
+** ROM, MRAM, SRAM, IOPort
+* CPU&rarr;外设
+** MRAM, SRAM, IOPort, OPort
+
+
