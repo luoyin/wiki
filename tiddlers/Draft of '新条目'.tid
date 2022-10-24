@@ -1,7 +1,7 @@
 created: 20221016145106853
 draft.of: 新条目
 draft.title: MCS-4 on FPGA (设计)
-modified: 20221016151552708
+modified: 20221016162741610
 tags: [[MCS-4 on FPGA]]
 title: Draft of '新条目'
 type: text/vnd.tiddlywiki
@@ -28,5 +28,24 @@ type: text/vnd.tiddlywiki
 ** ROM, MRAM, SRAM, IOPort
 * CPU&rarr;外设
 ** MRAM, SRAM, IOPort, OPort
+
+! 2. FPGA实现 (基于StepFPGA)
+!! 2.1. 资源分配
+<<<
+FPGA型号: MXO2-4000HC <br>
+EBR SRAM资源: 9k-bit * 10
+<<< 
+
+* ROM
+** EBR配置: 1024*9
+** 最大需要4块
+* MRAM
+** EBR配置: 2048*4 (需求: 1024*4)
+* SRAM
+** EBR配置: 2048*4 (需求: 256*4)
+** 可与MRAM共用
+
+!! 2.2. 存储控制器设计
+!!! 2.2.1. ROM控制器
 
 
