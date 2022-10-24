@@ -1,9 +1,7 @@
 created: 20221016145106853
-draft.of: 新条目
-draft.title: MCS-4 on FPGA (设计)
-modified: 20221016162741610
+modified: 20221024143315563
 tags: [[MCS-4 on FPGA]]
-title: Draft of '新条目'
+title: MCS-4 on FPGA (设计)
 type: text/vnd.tiddlywiki
 
 ! 1. 模块设计
