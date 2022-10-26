@@ -1,0 +1,74 @@
+created: 20221024150833290
+modified: 20221024154216010
+tags: [[UVM Examples]]
+title: UVM HelloWorld
+type: text/vnd.tiddlywiki
+
+!! 1. UVM HelloWorld ex1
+```verilog
+// top.sv
+`include "uvm_macros.svh"
+
+module top;
+  import uvm_pkg::*;
+  bit clk;
+  always #5 clk = ~clk;
+  initial begin
+    clk = 0;
+  end
+  
+  initial begin
+    run_test();
+  end
+endmodule
+```
+
+```
+// sim.do
+vlib work
+vlog top.sv
+vsim -voptargs=+acc work.top
+run 100
+```
+
+tcl窗口执行命令: `do sim.do`, 报FATAL, 提示没有组件.
+
+> No components instantiated. You must either instantiate at least one component before calling run_test or use run_test to do so. To run a test using run_test, use +UVM_TESTNAME or supply the test name in the argument to run_test(). Exiting simulation.
+
+
+!! 2. UVM HelloWorld ex2
+在ex1的基础上添加
+
+```verilog
+// my_test.sv
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
+class my_test extends uvm_test;
+  `uvm_component_utils(my_test)
+
+  function new(string name, uvm_component parent);
+    super.new(name, parent);
+    `uvm_info("my_test", "new", UVM_LOW);
+  endfunction
+  
+  task run_phase(uvm_phase phase);
+    phase.raise_objection(this);
+    `uvm_info("my_test", "hello world", UVM_LOW);
+    #10;
+    `uvm_info("my_test", "hello world, again", UVM_LOW);
+    phase.drop_objection(this);
+  endtask
+endclass
+```
+
+修改`top.sv`, 添加include项, 包含`my_test.sv`
+
+修改执行脚本, 添加选项
+
+```
+// before
+vsim -voptargs=+acc work.top
+// current
+vsim -voptargs=+acc +UVM_TESTNAME=my_test work.top
+```
